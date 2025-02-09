@@ -1,6 +1,9 @@
 // import { createBrowserRouter } from 'react-router';
 // import { RouterProvider } from 'react-router-dom';
 
+import { createBrowserRouter, RouterProvider } from 'react-router';
+
+import Home from './ui/Home';
 // import Home from './ui/Home';
 // import Menu, { loader as menuLoader } from './features/menu/Menu';
 // import Cart from './features/cart/Cart';
@@ -45,8 +48,15 @@
 //   return <RouterProvider router={router} />;
 // }
 
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home />,
+  },
+  {},
+]);
 function App() {
-  return <div>Hello World</div>;
+  return <RouterProvider router={router} />;
 }
 
 export default App;
