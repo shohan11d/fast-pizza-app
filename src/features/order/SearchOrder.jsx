@@ -18,7 +18,7 @@ function SearchOrder() {
       <input
         placeholder="Search Order *"
         value={query}
-        className='p-2 rounded-full bg-white'
+        className='p-1 rounded-full bg-white'
         onChange={(e) => setQuery(e.target.value)}
       />
     </form>

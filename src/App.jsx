@@ -4,8 +4,12 @@
 import { createBrowserRouter, RouterProvider } from 'react-router';
 
 import Home from './ui/Home';
+import AppLayout from './ui/AppLayout';
+
 // import Home from './ui/Home';
+
 // import Menu, { loader as menuLoader } from './features/menu/Menu';
+import Menu, { loader as menuLoader } from './features/menu/Menu';
 // import Cart from './features/cart/Cart';
 // import AppLayout from './ui/AppLayout';
 // import Error from './ui/Error';
@@ -50,11 +54,19 @@ import Home from './ui/Home';
 
 const router = createBrowserRouter([
   {
-    path: '/',
-    element: <Home />,
+    element: <AppLayout />,
+    children: [
+      { path: '/', element: <Home /> },
+      {
+        path: 'menu',
+        element: <Menu />,
+        loader: menuLoader,
+      },
+    ],
   },
   {},
 ]);
+
 function App() {
   return <RouterProvider router={router} />;
 }

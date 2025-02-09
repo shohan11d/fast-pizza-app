@@ -10,10 +10,9 @@ function AppLayout() {
       {isLoading && <Loader />}
       <main>
         <Header />
-        <h1>content</h1>
         <Outlet />
       </main>
-      <CartOverview />
+      {/* <CartOverview /> */}
     </div>
   );
 }
